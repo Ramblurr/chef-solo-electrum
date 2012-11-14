@@ -1,0 +1,31 @@
+{
+  "name": "electrum",
+  "default_attributes": {
+    "postgresql": {
+        "password": {
+          "postgres": "iloverandompasswordsbutthiswilldo"
+        },
+        "pg_hba": [ {
+            "type": "local",
+            "db": "electrum",
+            "user": "bitcoin",
+            "method": "ident" } ]
+      },
+      "bitcoin-abe": {
+          "db_name": "electrum",
+          "db_user": "bitcoin"
+      },
+      "electrum": {
+          "user": "bitcoin"
+      }
+  },
+  "override_attributes": { },
+  "json_class": "Chef::Role",
+  "description": "This is just a test role, no big deal.",
+  "chef_type": "role",
+  "run_list": [
+    "recipe[user]",
+    "recipe[build-essential]",
+    "recipe[git]",
+    "recipe[electrum-server]" ]
+}
