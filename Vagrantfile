@@ -7,7 +7,7 @@
 #
 Vagrant::Config.run do |config|
 
-  config.vm.define :webserver do |box_config|
+  config.vm.define :electrum do |box_config|
 
     box_config.vm.box       = 'precise64'
     box_config.vm.box_url   = 'http://files.vagrantup.com/precise64.box'
@@ -16,7 +16,7 @@ Vagrant::Config.run do |config|
 
     box_config.vm.network   :hostonly, '33.33.33.33'
 
-    box_config.vm.customize { |vm| vm.memory_size = 256 }
+    box_config.vm.customize { |vm| vm.memory_size = 1024 }
 
   end
 
