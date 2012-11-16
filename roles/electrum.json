@@ -16,7 +16,8 @@
           "db_user": "bitcoin"
       },
       "electrum": {
-          "user": "bitcoin"
+          "user": "bitcoin",
+          "bootstrap": false
       }
   },
   "override_attributes": { },
@@ -27,5 +28,5 @@
     "recipe[user]",
     "recipe[build-essential]",
     "recipe[git]",
-    "recipe[electrum-server]" ]
+    "recipe[electrum::leveldb]" ]
 }
