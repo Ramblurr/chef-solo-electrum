@@ -35,6 +35,21 @@ Run Chef in the _solo_ mode:
 
 Electrum should be installed on your node.
 
+### SSL configuration
+
+Generate your self-signed TLS certs using your favorite TLS implemenation, or
+buy into the racket and have someone else sign your cert.
+
+You need to convert your certificate, private keys, and CA bundles into
+single-line blobs with literal \n characters. This is so it may be copy/pasted
+into your data bag. You can use a Perl or Ruby one-liner for this conversion.
+(from
+[atomic-penguin/cookbook-certificate](https://github.com/atomic-penguin/cookbook-certificate)
+
+    /usr/bin/env ruby -e 'p ARGF.read' <filename>
+    -OR-
+    perl -pe 's!(\x0d)?\x0a!\\n!g' <filename>
+
 ## Deploy to EC2
 
 To be written...
