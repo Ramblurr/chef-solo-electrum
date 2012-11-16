@@ -37,20 +37,11 @@ Export the name of the node:
 
     export HOST=electrum
 
-Update files:
-
-    ./go_files.sh
-
-Bootstrap the node:
-
-    ./go_bootstrap.sh
-
 Run Chef in the _solo_ mode:
 
-    ./go_chef.sh
+    ./go_vagrant.sh
 
-Electrum should be installed on your node. To develop+debug, edit files, then
-repeat update/bootstrap/run chef
+Electrum should be installed on your node.
 
 ## Deploy to EC2
 
