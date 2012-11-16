@@ -1,20 +1,6 @@
 {
   "name": "electrum",
   "default_attributes": {
-    "postgresql": {
-        "password": {
-          "postgres": "iloverandompasswordsbutthiswilldo"
-        },
-        "pg_hba": [ {
-            "type": "local",
-            "db": "electrum",
-            "user": "bitcoin",
-            "method": "ident" } ]
-      },
-      "bitcoin-abe": {
-          "db_name": "electrum",
-          "db_user": "bitcoin"
-      },
       "electrum": {
           "user": "bitcoin",
           "bootstrap": false
