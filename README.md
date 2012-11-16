@@ -23,15 +23,7 @@ Generate configuration for connecting to the machine via SSH:
 
     vagrant ssh-config > tmp/vagrant_ssh_config
 
-Create data_bags/electrum/passwords.json with the contents:
-
-    {
-        "id": "passwords",
-        "bitcoind" : {
-            "rpcuser": "A USER NAME",
-            "rpcpass": "A PASSWORD"
-        }
-    }
+Copy `data_bags.sample` to `data_bags` and edit to your preference
 
 Export the name of the node:
 

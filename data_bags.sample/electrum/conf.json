@@ -1,0 +1,11 @@
+{
+    "id": "conf",
+    "config": {
+        "server": {
+            "host": "example.com",
+            "password": "god",
+            "banner": "Welcome bro!",
+            "irc": "no"
+        }
+    }
+}
