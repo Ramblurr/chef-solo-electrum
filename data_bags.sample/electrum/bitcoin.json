@@ -3,7 +3,7 @@
     "config": {
         "daemon": "1",
         "rpcuser": "rpcuser",
-        "rpcpass": "hunter2",
+        "rpcpassword": "hunter2",
         "rpcport": "4242",
         "noirc": "1"
     }
