@@ -29,11 +29,11 @@ Export the name of the node:
 
     export HOST=electrum
 
-Run Chef in the _solo_ mode:
+Run Chef in solo mode:
 
     ./go_vagrant.sh
 
-Electrum should be installed on your node.
+Electrum should be installed on your local VM.
 
 ### SSL configuration
 
@@ -50,6 +50,42 @@ into your data bag. You can use a Perl or Ruby one-liner for this conversion.
     -OR-
     perl -pe 's!(\x0d)?\x0a!\\n!g' <filename>
 
-## Deploy to EC2
+
+### Deploy to EC2
 
 To be written...
+
+## After Deploying
+
+(Optionally) fetch the blockchain bootstrap
+
+    # if you care about security you should check sig of this file
+    # visit http://eu2.bitcoincharts.com/blockchain/
+    sudo wget http://eu2.bitcoincharts.com/blockchain/bootstrap.dat -O /home/bitcoin/.bitcoin
+
+Start bitcoind
+
+    sudo /etc/init.d/bitcoind start
+
+Wait for hell to freeze over while the fat lady sings the blockchain home again.
+
+Start electrum
+
+    sudo /etc/init.d/electrum start
+
+Other things you should do:
+
+* Remove chef + ruby + chef user (that NOPASSWD account, tsk tsk)
+* Firewall up
+* Lockdown
+
+
+## Upgrading
+
+TODO: Figure this out
+
+Naive, not good way:
+
+    cd /usr/local/src/electrum
+    git pull origin master
+    sudo /etc/init.d/electrum restart
